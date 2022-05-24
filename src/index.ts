@@ -12,10 +12,6 @@ export function ViteMinifyPlugin(options?: Options): Plugin {
     transformIndexHtml: {
       enforce: 'post',
       transform: html => {
-        if (config.mode !== 'production') {
-          return html
-        }
-
         return minify(html, {
           removeComments: true,
           collapseWhitespace: true,
